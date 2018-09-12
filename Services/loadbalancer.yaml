@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: imageprocessing-service # Service name
+spec:
+  type: LoadBalancer
+  selector:
+    app: imageprocessing # Label selector. The Service targets Pods that use this label
+  ports:
+    - port: 80 # Port used to access the Service from within the cluster.
+      targetPort: 80 # Port opened by targeted Pods
