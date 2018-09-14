@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: imageprocessing
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: imageprocessing
+    spec:
+      containers:
+      - name: imageprocessing
+        image: jimmyjose/imageprocessing:2.0.0
+        ports:
+        - containerPort: 80
